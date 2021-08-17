@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Human Violence</title>
+	<link href="https://fonts.googleapis.com/css2?family=Anton&family=Open+Sans&display=swap" rel="stylesheet">
+	<link rel="icon" href="img/logo.png" type="image/x-icon">
+	<link rel="shortcut icon" href="img/logo.png" type="image/x-icon"> 
+	<link rel="stylesheet" href="css/main.css">
+	
+	 <script src="https://api-maps.yandex.ru/2.1/?apikey=1603606e-d07a-4e89-a297-66bf0f0b344f&lang=ru_RU"
+  type="text/javascript">
+  </script>
+  <script src="https://yandex.st/jquery/2.2.3/jquery.min.js" type="text/javascript"></script>
+  	
+	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+          ['Task', 'Hours per Day'],
+          ['Собаки',     19],
+          ['Кошки',      11],
+          ['Птицы',  4],
+          ['Другие животные', 1]
+         
+        ]);
+
+        var options = {
+          title: 'Кто чаще подвергается насилию',
+          backgroundColor: 'transparent'
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+        chart.draw(data, options);
+      }
+    </script>
+    
+<script type="text/javascript" src="js/charts.js"></script>
+
+</head>
+<body>
+	<header id="header" class="header">
+		<div class="container">
+			<div class="nav">
+				<img src="img/logo.svg" alt="Human Violence" class="logo">
+				<ul class="menu">
+					<li>
+						<a href="#">
+							Главная
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							Статистика
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							Полезно знать
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							Контакты
+						</a>
+					</li>
+				</ul>
+				<a href="tel:+375293077529" class="tel">
+					+375 (29) 307-75-29
+				</a>
+			</div>
+			<div class="offer">
+				
+				<h1>
+					Случаи жестокого обращения с животными
+				</h1>
+				<p>Электронный ресурс для освещения проблемы жестокого обращения с животными в Беларуси</p>
+				<a href="#" class="btn">Статистика</a>
+			</div>
+		</div>
+	</header>
+	<section id="about" class="about">
+		<div class="container">
+			<h2>Информация</h2>
+			<div class="description">
+				<div class="desc-left">
+					<h3>Почему это важно</h3>
+					<p>
+						Обращение с животными является важной стороной жизнедеятельности человека. Характер отношений с животными отражается на моральной, социальной, экологической и экономической сторонах жизни общества. Низкая культура обращения с животными, жестокость по отношению к ним неблагоприятно влияют на нравственное воспитание молодежи, оскорбляют чувства граждан, наносят многим из них моральный ущерб, причиняют экономические потери.
+					</p>
+				</div>
+				<div class="desc-right">
+					<h3>Ответственность</h3>
+					<p>
+						За жестокое обращение с животными предусмотрена как административная, так и уголовная ответственность. По 
+						статье 339−1 УК Республики Беларусь Жестокое обращение с животным, повлекшее его гибель или увечье, совершенное из хулиганских, корыстных или иных низменных побуждений либо в присутствии заведомо малолетнего, наказывается общественными работами, или штрафом, или исправительными работами на срок до одного года, или арестом. То же действие, совершённое повторно либо группой лиц, наказывается арестом, или ограничением свободы на срок до одного года, или лишением свободы на тот же срок.
+					</p>
+				</div>			
+			</div>
+			<div class="gallery">
+				<img src="img/img1.jpg" alt="photo 1">
+				<img src="img/img2.jpg" alt="photo 2">
+				<img src="img/img3.jpg" alt="photo 3">
+			</div>
+		</div>
+	</section>
+	<div id="piechart" class = "piechart" style="width: 900px; height: 420px;"></div>
+
+<div class="buttons">
+<div class="buttons_animals">
+	<li>
+		<input type="radio" id="cat" name="animals" checked 
+         onclick="add_location('cats')">Cats
+	</li>
+	<li>
+		<input type="radio" id="dog" name="animals"  
+		onClick=" add_location('dogs')">Dogs
+	</li>
+	<li>
+		<input type="radio" id="other" name="animals"
+         onclick="add_location('other')">Other
+	</li>
+	<li>
+		<input type="radio" id="all" name="animals" 
+		onClick="add_location('all')">All
+	</li>
+</div>
+
+<div class="buttons_cities">
+	<li>
+		<input type="radio" id="Brest" name="cities" 
+      onclick="change_location(52.502998, 25.770292)">Brest
+	</li>
+	<li>
+		<input type="radio" id="Gomel" name="cities"  
+		onClick="change_location(52.316710, 29.617942)">Gomel
+	</li>
+	<li>
+		<input type="radio" id="Grodno" name="cities"  
+			onClick="change_location(53.491035, 25.081437)">Grodno
+	</li>
+	<li>
+		<input type="radio" id="Minsk" name="cities" checked
+			onClick="change_location(53.902496, 27.561481)">Minsk
+	</li>
+	<li>
+		<input type="radio" id="Mogilev" name="cities"  
+			onClick="change_location(53.709425, 30.581335)">Mogilev
+	</li>
+	<li>
+		<input type="radio" id="Vitebsk" name="cities"  
+			onClick="change_location(55.237530, 28.729996)">Vitebsk
+	</li>
+</div>
+
+	<div class="chart_button">
+		<button name="button" onclick="button()">Показать график!</button>
+	</div>
+</div>
+
+
+<div class="info">
+	<div id="chart_div" class = "chart_div" style="width: 700px; height: 450px;"></div>
+	<div id="map" class="map"></div>
+</div>
+
+	<div id="news" style="margin-top: 5%; margin-left: 10%; margin-right: 10%">
+<table> <tr>
+
+    <td style="width: 46%;" valign="top"><img src="https://images.aif.by/007/553/910db204dcd0304e7fbed9abfd1405f6.jpg" alt=""; width="540" height="360" align="left" vspace="5" hspace="10" style="margin-top: 3%"> <a href="https://aif.by/krim-news/v_vitebske_s_balkona_sbrosili_shchenka" style="color: black; font-family: 'Anton'; font-weight:bold; font-size: 25px;">В Витебске с балкона сбросили щенка</a><p style="font-size: 18px;font-family: 'Open Sans', sans-serif;"> В Витебске с балкона третьего этажа сбросили щенка. Информацию об этом разместила пользователь социальных сетей, пишет БЕЛТА.</p></td>
+        <td style="width: 7%;"></td>
+         <td style="width: 46%;" valign="top"><img src="https://images.aif.by/007/572/ecc7c54f6749048e082443f70927ee3c.jpg" alt=""; width="540" height="360" align="left" vspace="5" hspace="10" style="margin-top: 3%"> <a href="https://aif.by/krim-news/na_zhitelya_minska_zaveli_ugolovnoe_delo_za_strelbu_po_pticam" style="color: black;font-family: 'Anton'; font-weight:bold; font-size: 25px;">На жителя Минска завели уголовное дело за стрельбу по птицам</a><p style="font-size: 18px;font-family: 'Open Sans', sans-serif;">Из остановившегося авто мужчина устроил стрельбу по птицам на деревьях из пневматической винтовки. В результате погибли семь птиц.</p></td>
+</tr>
+</table>
+</div>
+
+<div class="more">
+	<p><a href="https://egida.by/forum/80" style="color: black;font-family: 'Anton'; font-weight:bold; font-size: 25px;">Читать больше &rarr;</a></p>
+</div>
+
+<script src="js/maps.js"></script>
+
+</body>
+</html>
